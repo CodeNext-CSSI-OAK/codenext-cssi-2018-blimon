@@ -7,12 +7,12 @@ console.log('y ='+ y);
 let a =(y % 19);
 console.log('a ='+ a);
 //Divide y by 100 and get a quotient b and remainder c.
-let b = Math.floor (y / 100);
+let b = Math.floor(y / 100);
 console.log('b ='+ b);
 let c = y % 100;
 console.log('c ='+ c);
 //Divide b by 4 and get quotient d and remainder e.
-let d = Math.floor (b/4);
+let d = Math.floor(b/4);
 console.log('d ='+ d);
 let e = b % 4;
 console.log('e ='+ e);
@@ -26,6 +26,7 @@ console.log('g ='+g);
 let h = Math.floor((19 * a + b - d - g +15) % 30);
 console.log('h ='+h);
 //Divide c by 4 and get quotient i and remainder k.
+let i = Math.floor(c/4) 
 //Divide 32 + 2 * e + 2 * i - h - k by 7 and get remainder r. Ignore the quotient.
 //Divide a + 11 * h + 22 * r by 451 and get quotient m. Ignore the remainder.
 //Divide h + r - 7 * m + 114 by 31 and get quotient n and remainder p.
