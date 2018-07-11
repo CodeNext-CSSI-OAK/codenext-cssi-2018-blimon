@@ -5,7 +5,7 @@ let centsAsNumber =  Number(readline.question(' How many cents do you have? '));
 
 let quarters = Math.floor(centsAsNumber/25);
 console.log("quarters ="+quarters);
-centsAsNumber = centsAsNumber - quarters * 25;
+//cents -= quarters * 25;
 
 
 let dime = Math.floor(centsAsNumber/10);
