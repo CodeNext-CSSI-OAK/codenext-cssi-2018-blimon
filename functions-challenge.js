@@ -1,4 +1,4 @@
-//Author: FirstName LastName
+//Author: Belen Limon-Herrera
 
 /******************************************************************************
                                    sumDouble
@@ -16,15 +16,18 @@ sumDouble(2, 2) → 8
 
 
 function sumDouble(a, b) {
-
+  if (a === b){
+    return(a + b) * 2;
+  } else {
+    return a + b;
+  }
 }
-
 
 /******************************************************************************
                                    makes10
 
 Instructions:
-Given 2 numbers, a and b, return true if one if them is 10 or if their sum is 10.
+Given 2 numbers, a and b, return true if one of them is 10 or if their sum is 10.
 
 Examples:
 makes10(9, 10) → true
@@ -35,6 +38,9 @@ makes10(1, 9) → true
 
 
 function makes10(a, b) {
+  if (a === 10 || b === 10 || a + b === 10 );
+console.log("True");
+
 
 }
 
@@ -55,6 +61,11 @@ parrotTrouble(false, 6) → false
 *******************************************************************************/
 
 function parrotTrouble(talking, hour) {
+  if (talking && ( hour > 7 || hour > 20)){
+    return true;
+  }
+   return false;
+
 
 }
 
@@ -77,6 +88,7 @@ alarmClock(0, false) → "10:00"
 
 function alarmClock(day, vacation) {
 
+
 }
 
 
@@ -98,7 +110,19 @@ caughtSpeeding(65, true) → 0
 *******************************************************************************/
 
 function caughtSpeeding(speed, isBirthday) {
+  // If its my birthday, my "effective" speed is 5mph less.
+  if (isBirthday){
+    speed -= 5;
 
+  }
+
+   if (speed <= 60){
+     return 0;
+   } else if ( speed >= 61 && speed <= 80){
+     return 1;
+   } else {
+     return 2;
+   }
 }
 
 /****************************************************************************
