@@ -1,5 +1,5 @@
-// Author: FirstName lastName
-var readline = require("readline-sync");
+// Author: Belen Limon-Herrera
+let readline = require("readline-sync");
 
 /******************************************************************************
                                 global variables
@@ -17,7 +17,7 @@ Boolean. Represents if the player has chosen to quit the game (true) or not
 (false). Initialized to false in run(), can be altered in processResult().
 *******************************************************************************/
 
-var stonesRemaining, activePlayer, quit;
+let stonesRemaining, activePlayer, quit;
 
 /******************************************************************************
                                   printGreeting()
@@ -27,7 +27,7 @@ var stonesRemaining, activePlayer, quit;
 *******************************************************************************/
 
 function printGreeting() {
-
+ console.log("helllllo");
 }
 
 /******************************************************************************
@@ -48,6 +48,8 @@ function printGreeting() {
 *******************************************************************************/
 
 function setupGame() {
+stonesRemaining = 10;
+activePlayer = Math.floor(Math.random() * 2);
 
 }
 
@@ -62,6 +64,11 @@ function setupGame() {
 *******************************************************************************/
 
 function printStones() {
+let stones = "";
+for( let i = 0; i <= stonesRemaining; i++){
+  stones += "0";
+}
+ console.log(stones);
 
 }
 
@@ -87,8 +94,31 @@ function printStones() {
 *******************************************************************************/
 
 function removeStones() {
-
+let stonesToRemove = 0;
+//while(stonesToRemove !== 1 && stonesToRemove !== 2 && stonesToRemove !== 3)
+//get and validate user input
+while(!(stonesToRemove >=1 && stonesToRemove <=3)){
+  if(activePlayer === 0){
+    stonesToRemove = Number(readline.question("PLayer one, ENTER 1, 2, or 3:"));
+} else {
+  stonesToRemove = Number(readline.question("PLayer two, ENTER 1, 2, or 3:"));
 }
+if(!(stonesToRemove >=1 && stonesToRemove <= 3)){
+  console.log("please enter a valid number!");
+} else if (stonesToRemove> stonesRemaining){
+  stonesToRemove = 0;
+  console.log("There are only " + stonesRemaining + "stones remaining");
+  }
+}
+stonesRemaining -= stonesToRemove;
+if(activePlayer === 0){
+  activePlayer = 1;
+} else{
+  activePlayer = 0;
+
+  }
+}
+
 
 /******************************************************************************
                                   processResult()
@@ -105,7 +135,16 @@ function removeStones() {
 *******************************************************************************/
 
 function processResult() {
-
+if(activePlayer === 0){
+  console.log("player one wins!");
+} else {
+  console.log("player two wins!");
+}
+console.log();
+let keepPlaying = readline.question("Play again?(yes or no)");
+if(keepPlaying !== "yes " && keeplaying !== "y"){
+  quit = true;
+  }
 }
 
 /******************************************************************************
@@ -126,8 +165,17 @@ function processResult() {
 *******************************************************************************/
 
 function run() {
-
+printGreeting();
+quit = false;
+while( quit === false ){
+  setupGame();
+    while(stonesRemaining > 0){
+      printStones();
+      removeStones();
+    }
+    proccessResult();
+  }
+console.log("Thanks for playing");
 }
-
 // Run the program!
 run();

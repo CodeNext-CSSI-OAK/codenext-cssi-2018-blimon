@@ -1,8 +1,14 @@
-// Author: FirstName LastName
-var readline = require("readline-sync");
+// Author: Belen Limon-Herrera
+let readline = require("readline-sync");
 
 // global variables
-var firstName, lastName, momMaidenName, cityBorn, dreamCar, street, fantasyName;
+let firstName;
+let lastName;
+let momMaidenName;
+let cityBorn;
+let dreamCar;
+let street;
+let fantasyName;
 
 /******************************************************************************
                                   getNewFirstName()
@@ -13,7 +19,7 @@ var firstName, lastName, momMaidenName, cityBorn, dreamCar, street, fantasyName;
 *******************************************************************************/
 
 function getNewFirstName() {
-
+  return firstName.substring(0, 3) + lastName.substring(0, 2).toLowerCase();
 }
 
 /******************************************************************************
@@ -25,6 +31,7 @@ function getNewFirstName() {
 *******************************************************************************/
 
 function getNewLastName() {
+return momMaidenName.substring(0, 2) + cityBorn.substring(0, 3);
 
 }
 
@@ -36,7 +43,7 @@ function getNewLastName() {
 *******************************************************************************/
 
 function getTitle() {
-
+  return lastName.charAt(lastName.length - 1) + lastName.charAt(lastName.length - 2) + lastName.charAt(lastName.length - 3);
 }
 
 /******************************************************************************
@@ -47,7 +54,7 @@ function getTitle() {
 *******************************************************************************/
 
 function getHonorific() {
-
+return " of " + street;
 }
 
 /******************************************************************************
@@ -61,8 +68,14 @@ function getHonorific() {
 *******************************************************************************/
 
 function run() {
-
+  firstName = readline.question(" what is your first Name? ");
+  lastName = readline.question("what is your last Name? ");
+  momMaidenName = readline.question("what is your moms Maiden Name? ");
+  cityBorn = readline.question("what is the city you were Born in? ");
+  street = readline.question("what street do you live on? ");
+  console.log("all hail", + getNewFirstName() + " " + getNewLastName() + " " + getTitle() + getHonorific());
 }
+
 
 // Run the program!
 run();

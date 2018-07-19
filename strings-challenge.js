@@ -1,4 +1,4 @@
-//Author: FirstName LastName
+//Author: Belen Limon-Herrera
 
 /******************************************************************************
                                    withoutEnd()
@@ -15,7 +15,10 @@ withoutEnd("coding") → "odin"
 *******************************************************************************/
 
 function withoutEnd(str) {
-
+ if(str.length >= 2){
+   let firstChar = str.charAt(str.length - 1);
+   let lastChar = str.charAt(str.length - 1);
+ }
 }
 
 // Test this function.
@@ -37,7 +40,13 @@ frontAgain("ed") → true
 
 
 function frontAgain(str) {
-
+  let firstTwo = str.substring(0, 2);
+  let lastTwo = str.substring(str.length - 2);
+    if (firstTwo === lastTwo){
+      return true;
+    } else {
+      return false;
+    }
 }
 
 // Test this function.
@@ -58,6 +67,9 @@ deFront("away") → "aay"
 *******************************************************************************/
 
 function deFront(str) {
+  let first =
+  
+
 
 }
 
